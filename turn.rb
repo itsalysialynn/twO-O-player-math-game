@@ -1,10 +1,11 @@
-class Turn < Game 
-  attr_accessor :current_player
-  attr_accessor :answer
+class Turn
+  attr_reader :question
+  attr_reader :answer
 
-  def initialize(player1, player2, gameover, current_player, answer) 
-    super(player1, player2, gameover) 
-    @@current_player = current_player
-    @answer = answer
-  end  
+  def initialize
+    first_num = rand(1..20)
+    second_num = rand(1..20)
+    @question = "What is #{first_num} + #{second_num}"
+    @answer = first_num + second_num
+  end
 end
